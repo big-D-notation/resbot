@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tests</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tests.css') }}">
+</head>
+<body>
+    {% include 'header.jinja' %}
+
+    <div class="tests__container">
+        <div class="tests__view">
+                {% for test in tests %}
+                    <div class="test">
+                        <div class="test__title">{{test['title']}}</div>
+                        {% for question in test['questions'] %}
+                            <div class="test__question">
+                                <div class="test__question__title">{{question['title']}}</div>
+                                {% for option in question['options']  %}
+                                    {% if option.is_right %}
+                                        <div class="test__option right">{{option.text}}</div>
+                                    {% else %}
+                                        <div class="test__option">{{option.text}}</div>
+                                    {% endif %}    
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endfor %}
+                <a href="{{ url_for('add_test') }}">
+                    <input class="plus_button" type="button" value="+">
+                </a>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

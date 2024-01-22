@@ -1,0 +1,31 @@
+.header {
+    background-color: #0d0d0d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #fff;
+    padding: 20px;
+    padding-left: 35px;
+    font-size: larger;
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.header__nav {
+    list-style-type: none;
+}
+
+.header__link {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 40px;
+    transition: .3s;
+}
+
+.header__link:hover {
+    color: yellow;
+}
+
+.nav__elements {
+    list-style: none;
+    display: flex;
+}

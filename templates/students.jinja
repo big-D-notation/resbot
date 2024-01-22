@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Students</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/students.css') }}">
+</head>
+<body>
+    {% include 'header.jinja' %}
+
+<div class="students__container">
+    <div class="students__view">
+        <div class="students__header">
+            <p class="header__cell cell">Name</p>
+            <p class="header__cell cell">Group</p>
+            <p class="header__cell cell">TG nick</p>
+        </div>
+
+       {% for student in students %}
+        <div class="student">
+            <p class="cell">{{ student.name }}</p>
+            <p class="cell">{{ student.group }}</p>
+            <p class="cell">{{ student.tg_nick }}</p>
+        </div>
+        {% endfor %}
+
+        <a href="{{ url_for('add_student') }}">
+            <input class="plus_button" type="button" value="+">
+        </a>
+    </div>
+</div>
+
+    
+</body>
+</html>

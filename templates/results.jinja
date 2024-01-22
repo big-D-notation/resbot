@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/students.css') }}">
+</head>
+<body>
+    {% include 'header.jinja' %}
+
+<div class="students__container">
+    <div class="students__view">
+        
+
+       {% for student in students %}
+        <div class="students__header">
+            <p class="header__cell cell">{{ student.name }}</p>
+            <p class="header__cell cell">{{ student.group }}</p>
+            <p class="header__cell cell">{{ student.tg_nick }}</p>
+        </div>
+            {% if results[student] %}
+                {% for result in results[student] %}
+                    <div class="student">
+                        <p class="cell">{{ result['test_title'] }}</p>
+                        <p class="cell">{{ result['points'] }}</p>
+                        <p class="cell">max: {{ result['max_points'] }}</p>
+                    </div>
+                {% endfor %}
+            {% else %}
+                    <div class="student">
+                        <p class="cell">No tests completed</p>
+                    </div>
+            {% endif %}
+            
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

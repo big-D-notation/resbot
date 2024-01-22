@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add test</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/reset.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/header.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_test.css') }}">
+</head>
+<body>
+    {% include 'header.jinja' %}
+
+    <div class="form_container">
+        <form class="form" method="POST" action="{{ url_for('add_test') }}" id="form-add-test">
+            <section class="form__section">
+                <input class="form__input form__text_field" type="text" name="test_title" id="test_title" placeholder="Test title" required>
+            </section>
+            <section class="form__section">
+                <input class="form__input form__text_field" type="text" name="max_points" id="max_points" placeholder="Max points" required>
+            </section>
+
+            <section id="questions_container">
+              
+            </section>
+            
+            <section class="form__section">
+                <input class="form__input button" type="button" value="Add question" id="add_question_button">
+            </section>
+
+            <section >
+                <input class='form__input button' type="button" id="add_test_button" value="Add test">
+            </section>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='js/add_test.js') }}"></script>
+</body>
+</html>

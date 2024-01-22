@@ -1,0 +1,54 @@
+.students__container {
+    display: flex;
+    justify-content: center;
+    margin-top: 120px;
+}
+
+.students__view {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 50px 50px;
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+.students__header {
+    display: flex;
+}
+
+.student {
+    display: flex;
+}
+
+.cell {
+    border: 1px solid #0d0d0d;
+    width: 200px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 7px;
+}
+
+.header__cell {
+    text-align: center;
+    background-color: #0d0d0d;
+    color: #fff;
+}
+
+.plus_button {
+    margin-top: 20px;
+    background-color: #0d0d0d;
+    color: #fff;
+    border: 1px solid #0d0d0d;
+    border-radius: 50%;
+    padding: 10px 15px;
+    font-size: larger;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.plus_button:hover {
+    background-color: #fff;
+    color: #0d0d0d;
+}
